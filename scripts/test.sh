@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash -ex
 
 # runs scripts on local machine under jenkins slave
 
@@ -15,8 +15,12 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-pyenv install -f
-penv virtualenv --python=python3 workstation
-pyenv activate workstation
+# install python version from .python-version
+pyenv install
 
 python --version
+
+# create virtualenv and activate it
+pyenv virtualenv --python=python3 workstation
+pyenv activate workstation
+
