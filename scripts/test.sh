@@ -42,3 +42,4 @@ ansible-playbook -vvv desktop.yml --connection=local
 
 # code quality
 ansible-lint desktop.yml
+yamllint -f parsable .
