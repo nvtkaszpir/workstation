@@ -3,3 +3,6 @@
   package:
     name: '{{ packages_desktop }}'
     state: 'latest'
+
+- include_tasks: 'numix.yml'
+  when: ansible_os_family == 'Debian'

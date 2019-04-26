@@ -1,0 +1,20 @@
+---
+# install Numix GTK theme, part of the Numix Project http://numixproject.org
+- name: 'numix - add PPA repo'
+  apt_repository:
+    repo: 'ppa:numix/ppa'
+    state: 'present'
+    update_cache: true
+  when: ansible_os_family == 'Debian'
+
+- name: 'numix - install'
+  package:
+    name: 'numix-gtk-theme'
+    state: 'latest'
+  when: ansible_os_family == 'Debian'
+
+- name: 'numix - set as default for current user'
+  shell: |
+    xfconf-query -c xsettings -p /Net/ThemeName -s "Numix"
+    xfconf-query -c xfwm4 -p /general/theme -s "Numix"
+  when: ansible_os_family == 'Debian'
