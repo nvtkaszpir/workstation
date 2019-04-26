@@ -10,6 +10,22 @@
       - pidgin
     state: 'absent'
 
+- name: 'bash history - set to infinity'
+  become: false
+  lineinfile:
+    path: '$HOME/.bashrc'
+    state: 'present'
+    regexp: '^HISTSIZE='
+    line: 'HISTSIZE=-1'
+
+- name: 'bash history - do not truncate history file'
+  become: false
+  lineinfile:
+    path: '$HOME/.bashrc'
+    state: 'present'
+    regexp: '^HISTFILESIZE='
+    line: 'HISTFILESIZE='
+
 - include_tasks: 'redshift.yml'
   when: ansible_os_family == 'Debian'
 

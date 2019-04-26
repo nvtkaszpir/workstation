@@ -14,6 +14,7 @@
   when: ansible_os_family == 'Debian'
 
 # https://docs.xfce.org/xfce/xfconf/xfconf-query
+# notice, this may actually require better dbus kill, or just system restart
 - name: 'numix - set as default'
   become: false
   # become_user: kaszpir
