@@ -14,3 +14,5 @@
       - redshift-gtk
     state: 'latest'
   when: ansible_os_family == 'Debian'
+
+# todo, config template?

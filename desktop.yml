@@ -11,6 +11,13 @@
   vars:
     ansible_python_interpreter: /usr/bin/python3
   pre_tasks:
+    - name: 'Remove certain repos'
+      apt_repository:
+        repo: 'ppa:jonls/redshift-ppa'
+        state: 'absent'
+        update_cache: true
+      when: ansible_os_family == 'Debian'
+
     - name: 'Update APT'
       apt:
         autoclean: true
