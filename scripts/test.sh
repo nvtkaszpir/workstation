@@ -34,12 +34,12 @@ pip install -r requirements.txt
 # some verbose commands
 ansible --version
 
-# syntax check
-ansible-playbook -vvv --syntax-check desktop.yml
-
-# run it entirely locally
-ansible-playbook -vvv desktop.yml --connection=local
-
 # code quality
 ansible-lint desktop.yml
 yamllint -f parsable .
+
+# ansible syntax check
+ansible-playbook -vvv --syntax-check desktop.yml
+
+# ansible run locally
+ansible-playbook -vvv desktop.yml --connection=local
