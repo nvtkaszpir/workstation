@@ -1,0 +1,29 @@
+---
+# xfce4 tweaks for default xfce4 install
+# see ~/.config/xfce4/xfconf/
+- name: 'xfce4 settings'
+  become: false
+  # become_user: kaszpir
+  # become_method: su
+  shell: |
+    whoami
+    eval `dbus-launch --sh-syntax`
+
+    # general
+    xfconf-query -n -c xfwm4 -p /general/use_compositing -t bool -s true
+    xfconf-query -n -c xfwm4 -p /general/snap_to_border -t bool -s true
+    xfconf-query -n -c xfwm4 -p /general/snap_to_windows -t bool -s true
+    xfconf-query -n -c xfwm4 -p /general/cycle_preview -t bool -s true
+    xfconf-query -n -c xfwm4 -p /general/show_dock_shadow -t bool -s false
+    xfconf-query -n -c xfwm4 -p /general/borderless_maximize -t bool -s true
+
+    xfconf-query -n -c xfwm4 -p /general/move_opacity -t uint -s 70
+
+    # clock, style and date format
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-11/mode -t uint -s 2
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-11/digital-format -s "%Y.%m.%d %H:%M" -t string
+
+    kill -HUP $DBUS_SESSION_BUS_PID
+  args:
+    executable: /bin/bash
+  when: ansible_os_family == 'Debian'

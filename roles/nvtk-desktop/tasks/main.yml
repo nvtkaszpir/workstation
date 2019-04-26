@@ -6,3 +6,6 @@
 
 - include_tasks: 'numix.yml'
   when: ansible_os_family == 'Debian'
+
+- include_tasks: 'xfce4.yml'
+  when: ansible_os_family == 'Debian'
