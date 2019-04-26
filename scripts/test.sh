@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 
 # runs scripts on local machine under jenkins slave
 
@@ -19,7 +19,7 @@ eval "$(pyenv virtualenv-init -)"
 
 # install python version from .python-version
 pyenv --version
-pyenv install
+pyenv install -s
 
 python --version
 
