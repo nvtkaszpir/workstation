@@ -13,13 +13,16 @@
     state: 'latest'
   when: ansible_os_family == 'Debian'
 
-- name: 'numix - set as default for '
-  become: true
-  become_user: kaszpir
+- name: 'numix - set as default'
+  become: false
+  # become_user: kaszpir
+  # become_method: su
   shell: |
-    # eval `dbus-launch --sh-syntax`
+    whoami
+    eval `dbus-launch --sh-syntax`
     xfconf-query -c xsettings -p /Net/ThemeName -s "Numix"
     xfconf-query -c xfwm4 -p /general/theme -s "Numix"
+    kill -HUP $DBUS_SESSION_BUS_PID
   args:
     executable: /bin/bash
   when: ansible_os_family == 'Debian'
