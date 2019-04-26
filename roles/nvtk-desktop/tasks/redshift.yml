@@ -1,0 +1,16 @@
+---
+# install redshift for xfce
+- name: 'redshift - add PPA repo'
+  apt_repository:
+    repo: 'ppa:jonls/redshift-ppa'
+    state: 'present'
+    update_cache: true
+  when: ansible_os_family == 'Debian'
+
+- name: 'redshift - install'
+  package:
+    name:
+      - redshift
+      - redshift-gtk
+    state: 'latest'
+  when: ansible_os_family == 'Debian'

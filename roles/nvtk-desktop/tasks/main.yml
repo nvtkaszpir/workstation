@@ -4,6 +4,12 @@
     name: '{{ packages_desktop }}'
     state: 'latest'
 
+- name: 'Remove specific desktop packages'
+  package:
+    name:
+      - pidgin
+    state: 'absent'
+
 - include_tasks: 'numix.yml'
   when: ansible_os_family == 'Debian'
 

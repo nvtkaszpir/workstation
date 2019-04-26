@@ -9,6 +9,10 @@
     whoami
     eval `dbus-launch --sh-syntax`
 
+    # keyboard
+    xfconf-query -n -c keyboards -p /Default/KeyRepeat/Delay -t uint -s 250
+    xfconf-query -n -c keyboards -p /Default/KeyRepeat/Rate -t uint -s 50
+
     # general
     xfconf-query -n -c xfwm4 -p /general/use_compositing -t bool -s true
     xfconf-query -n -c xfwm4 -p /general/snap_to_border -t bool -s true
@@ -16,6 +20,8 @@
     xfconf-query -n -c xfwm4 -p /general/cycle_preview -t bool -s true
     xfconf-query -n -c xfwm4 -p /general/show_dock_shadow -t bool -s false
     xfconf-query -n -c xfwm4 -p /general/borderless_maximize -t bool -s true
+    xfconf-query -n -c xfwm4 -p /general/box_move -t bool -s false
+    xfconf-query -n -c xfwm4 -p /general/box_resize -t bool -s false
 
     xfconf-query -n -c xfwm4 -p /general/move_opacity -t uint -s 70
 
@@ -27,3 +33,5 @@
   args:
     executable: /bin/bash
   when: ansible_os_family == 'Debian'
+
+# todo fix keyboard shortcuts

@@ -10,8 +10,6 @@ packages_desktop:
   - network-manager-openvpn
   - network-manager-vpnc
   - openjdk-8-jdk
-  - redshift
-  - redshift-gtk
   - terminator
   - virt-manager
   - vlc
