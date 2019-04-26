@@ -6,14 +6,12 @@
   connection: local
   become: true
   gather_facts: true
+  # workaround for 'please install python3-apt' when running in pyenv/virtualenv
+  # yet, still even localhost requires python3-apt package installed
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
 
   pre_tasks:
-
-    - name: 'Install python3-apt package'
-      package:
-        name: python3-apt
-        state: installed
-      when: ansible_os_family == 'Debian'
 
     - name: 'Update APT'
       apt:
