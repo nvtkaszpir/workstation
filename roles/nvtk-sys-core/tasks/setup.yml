@@ -3,47 +3,43 @@
 # it is better to use explicit module with conditionals
 - name: 'Install common core packages - Debian family'
   apt:
-    name: '{{ item }}'
+    name: '{{ nvtk_sys_packages_common }}'
     state: 'latest'
-  with_items: "{{ nvtk_sys_packages_common }}"
   when: ansible_os_family == 'Debian'
 
 - name: 'Install common core packages - RedHat family'
   yum:
-    name: '{{ item }}'
+    name: '{{ nvtk_sys_packages_common }}'
     state: 'latest'
-  with_items: "{{ nvtk_sys_packages_common }}"
   when: ansible_os_family == 'RedHat'
 
 - name: 'Install core packages - Debian family'
   apt:
-    name: '{{ item }}'
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - dnsutils
+      - intel-microcode
+      - linux-firmware
+      - lm-sensors
+      - locales
+      - lsb-release
+      - software-properties-common
+      - thin-provisioning-tools
     state: 'latest'
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-    - dnsutils
-    - intel-microcode
-    - linux-firmware
-    - lm-sensors
-    - locales
-    - lsb-release
-    - software-properties-common
-    - thin-provisioning-tools
   when: ansible_os_family == 'Debian'
 
 - name: 'Install core packages - RedHat family'
   yum:
-    name: '{{ item }}'
+    name:
+      - bind-utils
+      - curl
+      - linux-firmware
+      - lm_sensors
+      - microcode_ctl
+      - redhat-lsb-core
+      - wget
     state: 'latest'
-  with_items:
-    - bind-utils
-    - curl
-    - linux-firmware
-    - lm_sensors
-    - microcode_ctl
-    - redhat-lsb-core
-    - wget
   when: ansible_os_family == 'RedHat'
 
 - name: 'Enable services'
