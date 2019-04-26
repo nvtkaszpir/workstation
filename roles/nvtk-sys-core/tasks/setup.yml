@@ -1,0 +1,73 @@
+---
+# avoiding using apckage module because it is very slow
+# it is better to use explicit module with conditionals
+- name: 'Install common core packages - Debian family'
+  apt:
+    name: '{{ item }}'
+    state: 'latest'
+  with_items: "{{ nvtk_sys_packages_common }}"
+  when: ansible_os_family == 'Debian'
+
+- name: 'Install common core packages - RedHat family'
+  yum:
+    name: '{{ item }}'
+    state: 'latest'
+  with_items: "{{ nvtk_sys_packages_common }}"
+  when: ansible_os_family == 'RedHat'
+
+- name: 'Install core packages - Debian family'
+  apt:
+    name: '{{ item }}'
+    state: 'latest'
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - dnsutils
+    - intel-microcode
+    - linux-firmware
+    - lm-sensors
+    - locales
+    - lsb-release
+    - software-properties-common
+    - thin-provisioning-tools
+  when: ansible_os_family == 'Debian'
+
+- name: 'Install core packages - RedHat family'
+  yum:
+    name: '{{ item }}'
+    state: 'latest'
+  with_items:
+    - bind-utils
+    - curl
+    - linux-firmware
+    - lm_sensors
+    - microcode_ctl
+    - redhat-lsb-core
+    - wget
+  when: ansible_os_family == 'RedHat'
+
+- name: 'Enable services'
+  service:
+    name: '{{ item }}'
+    enabled: true
+    state: 'started'
+  with_items:
+    - 'acpid'
+    - '{{ service_chrony_name }}'
+    - 'fstrim.timer'
+    - 'fstrim.service'
+
+# zz added cause vdsm.conf does not have a number
+- name: 'Tune sysctl slightly'
+  copy:
+    dest: '/etc/sysctl.d/zz-vmdirty.conf'
+    content: |
+      vm.dirty_ratio = 5
+      vm.dirty_background_ratio = 2
+      vm.vfs_cache_pressure = 50
+
+- name: 'Reload sysctl'
+  service:
+    name: 'systemd-sysctl'
+    state: 'restarted'
+  when: ansible_os_family == 'RedHat'

@@ -27,5 +27,15 @@ python --version
 pyenv virtualenv --force --python=python3 workstation
 pyenv activate workstation
 
+# install dependencies via pip
 pip install --upgrade pip==19.1
 pip install -r requirements.txt
+
+# some verbose commands
+ansible --version
+
+# syntax check
+ansible-playbook -vvv --syntax-check -i inventory.yml desktop.yml
+
+# run it
+ansible-playbook -vvv -i inventory.yml desktop.yml

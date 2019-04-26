@@ -1,0 +1,7 @@
+---
+- name: 'Ensure LVM uses TRIM commands'
+  replace:
+    backup: true
+    path: /etc/lvm/lvm.conf
+    regexp: 'issue_discards = 0'
+    replace: 'issue_discards = 1'

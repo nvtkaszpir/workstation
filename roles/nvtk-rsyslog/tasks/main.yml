@@ -1,0 +1,19 @@
+# TODO: fix that retarded confg, switch to Rainer Script.
+---
+- name: 'rsyslog - add PPA repo'
+  apt_repository:
+    repo: 'ppa:adiscon/v8-stable'
+    state: 'present'
+    update_cache: true
+  when: ansible_os_family == 'Debian'
+
+- name: 'rsyslog - install'
+  package:
+    name: 'rsyslog'
+    state: 'latest'
+
+- name: 'rsyslog - manage service'
+  service:
+    name: 'rsyslog'
+    enabled: true
+    state: 'started'

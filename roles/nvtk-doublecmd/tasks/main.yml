@@ -1,0 +1,13 @@
+---
+- name: 'doublecmd - add PPA repo'
+  apt_repository:
+    repo: 'ppa:alexx2000/doublecmd'
+    state: 'present'
+    update_cache: true
+  when: ansible_os_family == 'Debian'
+
+- name: 'doublecmd - install'
+  package:
+    name: 'doublecmd-gtk'
+    state: 'latest'
+  when: ansible_os_family == 'Debian'

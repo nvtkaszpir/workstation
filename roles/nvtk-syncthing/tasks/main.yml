@@ -1,0 +1,6 @@
+---
+- include_tasks: 'client.yml'
+  when: ansible_os_family == 'Debian'
+
+- include_tasks: 'gui.yml'
+  when: ansible_os_family == 'Debian'

@@ -1,0 +1,27 @@
+# install packages for ubuntu desktop
+# used very very rarely, mainly fo ether hosts.
+---
+- name: 'Prepare desktop system'
+  hosts: 'workstations'
+  become: true
+  gather_facts: true
+
+  pre_tasks:
+
+    - name: 'Update APT'
+      apt:
+        autoclean: true
+        autoremove: true
+        cache_valid_time: 0
+        update_cache: true
+        install_recommends: false
+      when: ansible_os_family == 'Debian'
+
+  roles:
+    - nvtk-users
+    - nvtk-rsyslog
+    - nvtk-git
+    - nvtk-sys-core
+    - nvtk-desktop
+    - nvtk-syncthing
+    - nvtk-doublecmd

@@ -1,0 +1,11 @@
+---
+packages_desktop:
+  - conky
+  - gnome-disk-utility
+  - gparted
+  - redshift
+  - redshift-gtk
+  - terminator
+  - wireshark-gtk
+  - xubuntu-desktop
+  - zenmap

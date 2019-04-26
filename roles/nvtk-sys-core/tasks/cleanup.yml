@@ -1,0 +1,37 @@
+---
+- name: 'Remove retarded packages - Debian family'
+  apt:
+    name: '{{ item }}'
+    state: 'absent'
+  with_items:
+    - btrfs-tools
+    - juju
+    - juju-core
+    - landscape-client
+    - landscape-common
+    - ntp
+    - ntpd
+    - popularity-contest
+    - ufw
+    - ubuntu-advantage-tools
+  when: ansible_os_family == 'Debian'
+
+- name: 'Remove retarded packages - RedHat family'
+  yum:
+    name: '{{ item }}'
+    state: 'absent'
+  with_items:
+    - ntp
+    - ntpd
+  when: ansible_os_family == 'RedHat'
+
+- name: 'Remove packages on virtual machines - Debian family'
+  apt:
+    name: '{{ item }}'
+    state: 'absent'
+  with_items:
+    - smartmontools
+    - hdparm
+  when:
+    - ansible_os_family == 'Debian'
+    - ansible_virtualization_role == 'guest'

@@ -1,0 +1,19 @@
+---
+# yes, it is Ubuntu 17.10 even if we are on xenial
+
+- name: 'syncthing-gtk - add repo for dekstop app'
+  apt_key:
+    url: 'http://download.opensuse.org/repositories/home:/kozec/xUbuntu_18.04/Release.key'
+    state: 'present'
+
+- name: 'syncthing-gtk - add repos'
+  apt_repository:
+    repo: 'deb http://download.opensuse.org/repositories/home:/kozec/xUbuntu_18.04/ /'
+    state: 'present'
+    update_cache: true
+
+
+- name: 'syncthing-gtk - manage package'
+  package:
+    name: 'syncthing-gtk'
+    state: 'latest'

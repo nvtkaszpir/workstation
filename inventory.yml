@@ -1,0 +1,13 @@
+---
+all:
+  hosts:
+    # workstations
+    jenkins-slave:
+      ansible_host: localhost
+
+  # RISE MY CHILDREN!
+  children:
+
+    workstations:
+      hosts:
+        jenkins-slave:

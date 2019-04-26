@@ -1,0 +1,12 @@
+---
+- name: 'git - add PPA repo'
+  apt_repository:
+    repo: 'ppa:git-core/ppa'
+    state: 'present'
+    update_cache: true
+  when: ansible_os_family == 'Debian'
+
+- name: 'git - install'
+  package:
+    name: 'git'
+    state: 'latest'

@@ -1,0 +1,5 @@
+---
+- name: 'Install core packages'
+  package:
+    name: '{{ packages_desktop }}'
+    state: 'latest'
