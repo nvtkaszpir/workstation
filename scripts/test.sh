@@ -31,13 +31,14 @@ pyenv activate workstation
 pip install --upgrade pip==19.1
 pip install -r requirements.txt
 
-# some verbose commands
-ansible --version
-
+echo "======== Stage: linters ========"
 # code quality
 ansible-lint desktop.yml
 yamllint -f parsable .
 
+echo "======== Stage: ansible ========"
+# some verbose commands
+ansible --version
 # ansible syntax check
 ansible-playbook -vvv --syntax-check desktop.yml
 
