@@ -1,6 +1,8 @@
 ---
 packages_desktop:
+  - chromium-browser
   - conky
+  - firefox
   - gnome-disk-utility
   - gparted
   - redshift
@@ -9,3 +11,5 @@ packages_desktop:
   - wireshark-gtk
   - xubuntu-desktop
   - zenmap
+  - vpnc
+  - network-manager-vpnc
