@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl "https://b.hlds.pl/jenkins/git/notifyCommit?url=https://github.com/nvtkaszpir/workstation.git"

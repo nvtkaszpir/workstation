@@ -16,5 +16,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 pyenv install -f
+penv virtualenv --python=python3 workstation
+pyenv activate workstation
 
 python --version
