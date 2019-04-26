@@ -9,6 +9,12 @@
 
   pre_tasks:
 
+    - name: 'Install python3-apt package'
+      package:
+        name: python3-apt
+        state: installed
+      when: ansible_os_family == 'Debian'
+
     - name: 'Update APT'
       apt:
         autoclean: true
