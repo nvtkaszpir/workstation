@@ -8,7 +8,9 @@ if [ -z "$JENKINS_URL" ]; then
 fi
 
 # install pyenv
-curl https://pyenv.run | bash
+if [ ! -d "$HOME/.pyenv" ]; then
+  curl https://pyenv.run | bash
+fi
 
 # pyenv init
 export PATH="$HOME/.pyenv/bin:$PATH"
@@ -16,6 +18,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # install python version from .python-version
+pyenv --version
 pyenv install
 
 python --version
