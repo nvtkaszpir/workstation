@@ -8,7 +8,7 @@
   git:
     depth: 1
     clone: yes
-    dest: ~/.fzf
+    dest: "$HOME/.fzf"
     repo: 'https://github.com/junegunn/fzf.git'
     force: yes
     version: 0.18.0
@@ -17,7 +17,9 @@
 - name: 'fuzzyfind - install'
   become: false
   shell:
-    ~/.fzf/install --all --no-zsh --no-fish
+    $HOME/.fzf/install --all --no-zsh --no-fish
   args:
     executable: /bin/bash
   when: ansible_os_family == 'Debian'
+  tags:
+  - skip_ansible_lint
