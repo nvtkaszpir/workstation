@@ -29,8 +29,8 @@
     # get current values
     xfconf-query -c xfwm4 -p /general/theme
     xfconf-query -c xsettings -p /Net/ThemeName
-    cat $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml | grep Theme
-    # stop termporary dbus session
+    grep -Ri theme $HOME/.config/xfce4/
+    # stop temporary dbus session
     kill -HUP $DBUS_SESSION_BUS_PID
   args:
     executable: /bin/bash
