@@ -20,8 +20,11 @@
   shell: |
     whoami
     eval `dbus-launch --sh-syntax`
-    xfconf-query -c xsettings -p /Net/ThemeName -s "Numix"
+    # general theme
     xfconf-query -n -c xfwm4 -p /general/theme -s "Numix" -t string
+    # appearance theme
+    xfconf-query -n -c xsettings -p /Net/ThemeName -s "NumixBlue" -t string
+
     kill -HUP $DBUS_SESSION_BUS_PID
   args:
     executable: /bin/bash
