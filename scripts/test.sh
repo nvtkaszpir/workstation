@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ansible --version
 
 # syntax check
-ansible-playbook -vvv --syntax-check -i inventory.yml desktop.yml
+ansible-playbook -vvv --syntax-check desktop.yml
 
-# run it
-ansible-playbook -vvv -i inventory.yml desktop.yml
+# run it entirely locally
+ansible-playbook -vvv desktop.yml --connection=local
