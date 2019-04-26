@@ -11,6 +11,7 @@
     dest: ~/.fzf
     repo: 'https://github.com/junegunn/fzf.git'
     force: yes
+    version: 0.18.0
   when: ansible_os_family == 'Debian'
 
 - name: 'fuzzyfind - install'
