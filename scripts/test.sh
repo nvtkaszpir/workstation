@@ -15,6 +15,6 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-pyenv install -f "$WORKSPACE/.python-version"
+pyenv install -f
 
 python --version
