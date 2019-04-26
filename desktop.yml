@@ -10,9 +10,7 @@
   # yet, still even localhost requires python3-apt package installed
   vars:
     ansible_python_interpreter: /usr/bin/python3
-
   pre_tasks:
-
     - name: 'Update APT'
       apt:
         autoclean: true
@@ -21,7 +19,6 @@
         update_cache: true
         install_recommends: false
       when: ansible_os_family == 'Debian'
-
   roles:
     - nvtk-users
     - nvtk-rsyslog

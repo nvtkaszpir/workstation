@@ -1,0 +1,14 @@
+---
+# exclude_paths:
+#   - ./my/excluded/directory/
+#   - ./my/other/excluded/directory/
+#   - ./last/excluded/directory/
+parseable: true
+quiet: false
+# rulesdir:
+#   - ./rule/directory/
+skip_list:
+  - '403'  # package latest
+  - '204'  # line too long
+use_default_rules: true
+verbosity: 0

@@ -39,3 +39,6 @@ ansible-playbook -vvv --syntax-check desktop.yml
 
 # run it entirely locally
 ansible-playbook -vvv desktop.yml --connection=local
+
+# code quality
+ansible-lint desktop.yml
