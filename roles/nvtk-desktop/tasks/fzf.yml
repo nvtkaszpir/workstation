@@ -22,4 +22,4 @@
     executable: /bin/bash
   when: ansible_os_family == 'Debian'
   tags:
-  - skip_ansible_lint
+    - skip_ansible_lint
