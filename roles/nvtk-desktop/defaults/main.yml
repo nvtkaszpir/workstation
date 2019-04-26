@@ -5,11 +5,18 @@ packages_desktop:
   - firefox
   - gnome-disk-utility
   - gparted
+  - lxd
+  - lxd-tools
+  - network-manager-openvpn
+  - network-manager-vpnc
+  - openjdk-8-jdk
   - redshift
   - redshift-gtk
   - terminator
+  - virt-manager
+  - vlc
+  - vpnc
   - wireshark-gtk
+  - x264
   - xubuntu-desktop
   - zenmap
-  - vpnc
-  - network-manager-vpnc
