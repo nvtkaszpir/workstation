@@ -13,10 +13,13 @@
     state: 'latest'
   when: ansible_os_family == 'Debian'
 
-- name: 'numix - set as default for user id 1000'
+- name: 'numix - set as default for '
+  become: true
+  become_user: kaszpir
   shell: |
+    # eval `dbus-launch --sh-syntax`
     xfconf-query -c xsettings -p /Net/ThemeName -s "Numix"
     xfconf-query -c xfwm4 -p /general/theme -s "Numix"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: "unix:path=/run/user/1000/bus"
+  args:
+    executable: /bin/bash
   when: ansible_os_family == 'Debian'
