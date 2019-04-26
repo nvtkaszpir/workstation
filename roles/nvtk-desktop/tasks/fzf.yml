@@ -7,10 +7,10 @@
   # become_method: su
   git:
     depth: 1
-    clone: yes
+    clone: true
     dest: "$HOME/.fzf"
     repo: 'https://github.com/junegunn/fzf.git'
-    force: yes
+    force: true
     version: 0.18.0
   when: ansible_os_family == 'Debian'
 
