@@ -2,7 +2,8 @@
 # used very very rarely, mainly fo ether hosts.
 ---
 - name: 'Prepare desktop system'
-  hosts: 'workstations'
+  hosts: 127.0.0.1
+  connection: local
   become: true
   gather_facts: true
 
