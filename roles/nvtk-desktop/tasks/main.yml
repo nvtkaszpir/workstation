@@ -10,6 +10,9 @@
       - pidgin
     state: 'absent'
 
+- include_tasks: 'redshift.yml'
+  when: ansible_os_family == 'Debian'
+
 - include_tasks: 'numix.yml'
   when: ansible_os_family == 'Debian'
 
