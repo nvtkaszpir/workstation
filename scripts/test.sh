@@ -24,7 +24,7 @@ pyenv install -s
 python --version
 
 # create virtualenv and activate it
-pyenv virtualenv --python=python3 workstation
+pyenv virtualenv --force --python=python3 workstation
 pyenv activate workstation
 
 pip install --upgrade pip==19.1
