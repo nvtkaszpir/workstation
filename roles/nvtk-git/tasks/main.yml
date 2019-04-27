@@ -8,5 +8,7 @@
 
 - name: 'git - install'
   package:
-    name: 'git'
+    name:
+      - git
+      - git-lfs
     state: 'latest'
