@@ -11,6 +11,7 @@ nvtk_sys_packages_common:
   - htop
   - inxi
   - iotop
+  - iperf
   - iptraf
   - jq
   - links
