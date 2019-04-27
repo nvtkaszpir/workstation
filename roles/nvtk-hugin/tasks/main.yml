@@ -1,0 +1,17 @@
+# install hugin panorama stitcher tool
+# https://wiki.panotools.org/Hugin_Compiling_Ubuntu#Shortcut
+---
+- name: 'hugin - add PPA repo'
+  apt_repository:
+    repo: 'ppa:hugin/hugin-builds'
+    state: 'present'
+    update_cache: true
+  when: ansible_os_family == 'Debian'
+
+- name: 'hugin - install'
+  package:
+    name:
+      - hugin
+      - enblend
+      - panini
+    state: 'latest'
