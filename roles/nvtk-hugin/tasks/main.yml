@@ -1,19 +1,21 @@
 # install hugin panorama stitcher tool
 # https://wiki.panotools.org/Hugin_Compiling_Ubuntu#Shortcut
 ---
+- name: 'Load a variable file based on the OS type'
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - "main.yml"
+
 - name: 'hugin - add PPA repo'
   apt_repository:
-    repo: 'ppa:hugin/hugin-builds'
+    repo: '{{ hugin_ppa_repo }}'
     state: 'present'
     update_cache: true
-  when: ansible_os_family == 'Debian'
-
-- name: 'hugin - add PPA repo - nightly'
-  apt_repository:
-    repo: 'ppa:hugin/nightly'
-    state: 'present'
-    update_cache: true
-  when: ansible_distribution_release == 'bionic'
+  when:
+    - hugin_ppa_repo
+    - ansible_os_family == 'Debian'
 
 - name: 'hugin - install'
   package:
@@ -22,3 +24,5 @@
       - enblend
       - panini
     state: 'latest'
+  when:
+    - hugin_ppa_repo
