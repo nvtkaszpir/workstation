@@ -14,7 +14,7 @@
     state: 'present'
     update_cache: true
   when:
-    - hugin_ppa_repo
+    - hugin_ppa_repo is defined
     - ansible_os_family == 'Debian'
 
 - name: 'hugin - install'
@@ -25,4 +25,4 @@
       - panini
     state: 'latest'
   when:
-    - hugin_ppa_repo
+    - hugin_ppa_repo is defined
