@@ -1,6 +1,6 @@
 ---
-# exclude_paths:
-#   - ./my/excluded/directory/
+exclude_paths:
+  - .galaxy/
 #   - ./my/other/excluded/directory/
 #   - ./last/excluded/directory/
 parseable: true
