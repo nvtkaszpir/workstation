@@ -22,7 +22,6 @@
     name:
       - hugin
       - enblend
-      - panini
     state: 'latest'
   when:
     - hugin_ppa_repo is defined
