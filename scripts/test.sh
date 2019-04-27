@@ -36,6 +36,11 @@ echo "======== Stage: linters ========"
 ansible-lint desktop.yml
 yamllint -f parsable .
 
+echo "======== Stage: ansible-galaxy ========"
+# some verbose commands
+ansible-galaxy --version
+ansible-galaxy install -r requirements.yml
+
 echo "======== Stage: ansible ========"
 # some verbose commands
 ansible --version

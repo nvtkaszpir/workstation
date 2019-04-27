@@ -34,3 +34,4 @@
     - nvtk-desktop
     - nvtk-syncthing
     - nvtk-doublecmd
+    - geerlingguy.docker

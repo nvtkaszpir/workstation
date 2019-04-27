@@ -1,0 +1,7 @@
+# this is ansible-galaxy dependencies files
+# use it as:
+# ansible-galaxy install -r requirements.yml
+
+---
+- src: geerlingguy.docker
+  version: 2.5.2
