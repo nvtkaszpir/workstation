@@ -8,6 +8,13 @@
     update_cache: true
   when: ansible_os_family == 'Debian'
 
+- name: 'hugin - add PPA repo - nightly'
+  apt_repository:
+    repo: 'ppa:hugin/nightly'
+    state: 'present'
+    update_cache: true
+  when: ansible_distribution_release == 'bionic'
+
 - name: 'hugin - install'
   package:
     name:
