@@ -37,4 +37,4 @@
     - nvtk-hugin
     - nvtk-qbittorrent
     - geerlingguy.docker
-    - naftulikay.google-cloud-sdk
+    - devoperate.gcloud
