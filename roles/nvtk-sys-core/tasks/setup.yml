@@ -16,7 +16,9 @@
 - name: 'Install core packages - Debian family'
   apt:
     name:
+      - apt-file
       - apt-transport-https
+      - apt-utils
       - ca-certificates
       - dnsutils
       - intel-microcode
