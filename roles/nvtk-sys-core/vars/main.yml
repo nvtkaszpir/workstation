@@ -22,12 +22,16 @@ nvtk_sys_packages_common:
   - multitail
   - ncdu
   - ncftp
+  - netcat
   - nmap
+  - openssh-client
+  - openssh-server
   - p7zip
   - parallel
   - partclone
   - parted
   - pbzip2
+  - pigz
   - psmisc
   - python-jmespath
   - python-pip
@@ -35,10 +39,20 @@ nvtk_sys_packages_common:
   - python-virtualenv
   - rsync
   - screen
+  - sipcalc
   - smartmontools
+  - sqlite3
+  - strace
   - stress-ng
   - sudo
+  - sysstat
   - tmux
+  - traceroute
+  - tree
   - unzip
   - virt-what
+  - vnstat
+  - vnstati
   - wget
+  - xz-utils
+  - zip

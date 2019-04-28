@@ -1,22 +1,29 @@
 ---
 packages_desktop:
   - chromium-browser
+  - clusterssh
   - conky
   - firefox
   - gnome-disk-utility
   - gparted
   - lxd
   - lxd-tools
+  - meld
   - network-manager-openvpn
   - network-manager-vpnc
   - openjdk-8-jdk
   - redshift
   - redshift-gtk
+  - remmina
   - terminator
+  - toilet
+  - toilet-fonts
   - virt-manager
   - vlc
   - vpnc
+  - wireshar
   - wireshark-gtk
   - x264
+  - xbacklight
   - xubuntu-desktop
   - zenmap
