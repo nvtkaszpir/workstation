@@ -12,9 +12,13 @@ packages_desktop:
   - network-manager-openvpn
   - network-manager-vpnc
   - openjdk-8-jdk
+  - pinta
   - redshift
   - redshift-gtk
   - remmina
+  - remmina-plugin-spice
+  - shotwell
+  - spice-html5
   - terminator
   - toilet
   - toilet-fonts
