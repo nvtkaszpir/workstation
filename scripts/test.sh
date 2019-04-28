@@ -31,9 +31,11 @@ pyenv activate workstation
 pip install --upgrade pip==19.1
 pip install -r requirements.txt
 
-echo "======== Stage: linters ========"
 # code quality
+
+echo "======== Stage: linters - ansible-lint ========"
 ansible-lint desktop.yml
+echo "======== Stage: linters - yamllint ========"
 yamllint -f parsable .
 
 echo "======== Stage: ansible-galaxy ========"
