@@ -7,3 +7,5 @@
   version: 2.5.2
 - src: devoperate.gcloud
   version: v0.1.0
+- src: andrewrothstein.kubectl
+  version: v1.1.19
