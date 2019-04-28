@@ -21,7 +21,7 @@ packages_desktop:
   - virt-manager
   - vlc
   - vpnc
-  - wireshar
+  - wireshark
   - wireshark-gtk
   - x264
   - xbacklight
