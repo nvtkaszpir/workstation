@@ -35,4 +35,5 @@
     - nvtk-syncthing
     - nvtk-doublecmd
     - nvtk-hugin
+    - nvtk-qbittorrent
     - geerlingguy.docker

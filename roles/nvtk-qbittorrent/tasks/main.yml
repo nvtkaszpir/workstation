@@ -1,0 +1,15 @@
+---
+- name: 'qbittorrent - add PPA repo'
+  apt_repository:
+    repo: 'ppa:qbittorrent-team/qbittorrent-unstable'
+    state: 'present'
+    update_cache: true
+  when:
+    - ansible_os_family == 'Debian'
+
+- name: 'qbittorrent - manage package'
+  package:
+    name: 'qbittorrent'
+    state: 'latest'
+  when:
+    - ansible_os_family == 'Debian'
