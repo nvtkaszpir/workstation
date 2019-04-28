@@ -5,3 +5,5 @@
 ---
 - src: geerlingguy.docker
   version: 2.5.2
+- src: naftulikay.google-cloud-sdk
+  version: v1.0.0
