@@ -1,0 +1,18 @@
+---
+# zz added cause vdsm.conf does not have a number
+- name: 'Tune sysctl aggresively on vms'
+  copy:
+    dest: '/etc/sysctl.d/zz-vmdirty.conf'
+    content: |
+      vm.dirty_background_ratio = 10
+      vm.dirty_expire_centisecs = 30000
+      vm.dirty_ratio = 80
+      vm.dirty_writeback_centisecs = 1000
+      vm.vfs_cache_pressure = 50
+  when:
+    - ansible_virtualization_role == 'guest'
+
+- name: 'Reload sysctl'
+  service:
+    name: 'systemd-sysctl'
+    state: 'restarted'
