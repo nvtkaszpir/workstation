@@ -23,10 +23,10 @@
     whoami
     # start temporary dbus session
     eval `dbus-launch --sh-syntax`
-    # general theme
-    xfconf-query -n -c xfwm4 -p /general/theme -s "Numix" -t string
     # appearance theme
     xfconf-query -n -c xsettings -p /Net/ThemeName -s "Greybird" -t string
+    # general theme
+    xfconf-query -n -c xfwm4 -p /general/theme -s "Numix" -t string
 
     # get current values
     xfconf-query -c xfwm4 -p /general/theme
