@@ -28,7 +28,7 @@ which shows ara web server, example image below.
 
 
 # TODO
-* any tests, right now its YOLO mode, especially if internet is unstable.
+* provision independent tests, right now its YOLO mode, especially if internet is unstable.
 * jenkins pipeline
 * guest: apt settings (retries)
 * guest: dnsmasq
