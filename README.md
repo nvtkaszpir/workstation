@@ -15,11 +15,14 @@ To run locally:
 * after run you can exec `scripts/ara.sh` to see ansible runs results via web
 * re-run `scripts/test_in_vagrant.sh` and hit refresh in ara web
 
-# asciinema / images
+# Demo
 
 [![asciicast](https://asciinema.org/a/249319.svg)](https://asciinema.org/a/249319)
 
 [![asciicast](https://asciinema.org/a/249326.svg)](https://asciinema.org/a/249326)
+
+After starting ara script you are presented with url to http://localhost:9191
+which shows ara web server, example image below.
 
 ![ara web preview](ara.png "ARA web preview example")
 
