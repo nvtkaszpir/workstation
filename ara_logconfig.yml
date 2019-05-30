@@ -1,0 +1,43 @@
+---
+version: 1
+disable_existing_loggers: false
+formatters:
+    ara_standard:
+        format: '%(asctime)s %(levelname)s %(name)s: %(message)s'
+handlers:
+    ara_console:
+        class: logging.StreamHandler
+        formatter: ara_standard
+        level: INFO
+        stream: ext://sys.stdout
+    ara_file:
+        class: logging.handlers.TimedRotatingFileHandler
+        formatter: ara_standard
+        level: INFO
+        filename: './reports/ara/db/ara.log'
+        when: 'midnight'
+        interval: 1
+        backupCount: 30
+loggers:
+    ara:
+        handlers:
+            - ara_file
+        level: INFO
+        propagate: 0
+    alembic:
+        handlers:
+            - ara_console
+            - ara_file
+        level: WARN
+        propagate: 0
+    sqlalchemy.engine:
+        handlers:
+            - ara_file
+        level: WARN
+        propagate: 0
+    werkzeug:
+        handlers:
+            - ara_console
+            - ara_file
+        level: INFO
+        propagate: 0
