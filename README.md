@@ -28,10 +28,12 @@ which shows ara web server, example image below.
 
 
 # TODO
+* any tests, right now its YOLO mode, especially if internet is unstable.
+* jenkins pipeline
 * guest: apt settings (retries)
 * guest: dnsmasq
 * guest: smartgit
-* ci: linters to hthml
+* ci: linters output to html
 * guest: apt dist-upgrade
 * guest: system reboot if required
 * ansible: retries?
