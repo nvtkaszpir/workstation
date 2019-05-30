@@ -1,4 +1,6 @@
 #!/bin/bash -e
+PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PYENV_VIRTUALENV_DISABLE_PROMPT
 
 if [ -d "/vagrant" ]; then
   echo "Running in vagrant, faking some things..."
@@ -54,18 +56,18 @@ ansible-galaxy install -r requirements.yml
 echo "======== Stage: ansible ara config ======"
 # prepare ansible ara for local reports
 source <(python -m ara.setup.env)
-export ARA_DIR="$(pwd)/reports/ara/db"
-
+ARA_DIR="$(pwd)/reports/ara/db"
+export ARA_DIR
 
 echo "======== Stage: ansible ========"
 # some verbose commands
 ansible --version
 # ansible syntax check
-ansible-playbook -vvv --syntax-check desktop.yml
+ansible-playbook --syntax-check desktop.yml
 
 # ansible run locally
 set +e
-ansible-playbook -vvv desktop.yml --connection=local
+ansible-playbook desktop.yml --connection=local
 result=$?
 set -e
 
