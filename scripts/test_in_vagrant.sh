@@ -4,7 +4,7 @@
 
 ## config
 # vm hostname used in vagrant
-: ${VM_HOSTNAME:="ubuntu-1"}
+: ${VM_HOSTNAME:="u1804"}
 
 # delete vm after build
  
