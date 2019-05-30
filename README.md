@@ -15,6 +15,14 @@ To run locally:
 * after run you can exec `scripts/ara.sh` to see ansible runs results via web
 * re-run `scripts/test_in_vagrant.sh` and hit refresh in ara web
 
+# asciinema / images
+
+[![asciicast](https://asciinema.org/a/249319.svg)](https://asciinema.org/a/249319)
+
+[![asciicast](https://asciinema.org/a/249326.svg)](https://asciinema.org/a/249326)
+
+![ara web preview](ara.png "ARA web preview example")
+
 
 # TODO
 * guest: apt settings (retries)
