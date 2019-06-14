@@ -44,6 +44,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     s.vm.network "private_network", ip: "192.168.50.10"
   end
 
+  config.vm.provision "net",
+    type: "shell",
+    path: "scripts/fix.generic-ubuntu-dns.sh",
+    privileged: true,
+    run: "always"
+
   config.vm.provision "common",
     type: "shell",
     path: "scripts/common.sh",
