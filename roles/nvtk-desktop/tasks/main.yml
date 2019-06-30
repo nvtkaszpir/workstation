@@ -4,6 +4,13 @@
     name: '{{ packages_desktop }}'
     state: 'latest'
 
+- name: 'Enable lightdm'
+  service:
+    name: 'lightdm'
+    enabled: true
+    state: 'started'
+
+
 - name: 'Remove specific desktop packages'
   package:
     name:
