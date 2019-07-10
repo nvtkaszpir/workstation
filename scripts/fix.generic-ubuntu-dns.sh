@@ -3,6 +3,9 @@
 # https://github.com/lavabit/robox/issues/11
 # https://github.com/lavabit/robox/issues/54
 
+# exit if we are not on modern ubuntu version
+test -d /etc/netplan || exit 0
+
 # Reset netplan config, not really needed; just to clearly indicate no fixed dns is used
 tee <<EOF > /etc/netplan/01-netcfg.yaml
 network:
@@ -20,7 +23,7 @@ netplan generate
 systemctl restart systemd-networkd.service
 systemctl restart ifplugd.service
 
-# Remove fixed DNS entries and disable DNSSEC
+# Remove fixed DNS entries and disable DNSSEC, disable flaky caching, or emdns
 tee <<EOF > /etc/systemd/resolved.conf
 [Resolve]
 DNS=
@@ -36,5 +39,6 @@ EOF
 systemctl daemon-reload
 systemctl restart systemd-resolved
 
+echo "Fixed networking."
 
 # verify with: systemd-resolve --status
