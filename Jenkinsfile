@@ -67,7 +67,7 @@ pipeline {
             vagrant version
             vagrant plugin list
 
-            vagrant plugin install vagrant-libvirt --plugin-clean-sources --plugin-version 0.0.45
+            vagrant plugin install vagrant-libvirt --plugin-version 0.0.45
             '''
           }
         }
@@ -107,7 +107,7 @@ pipeline {
 
         '''
       }
-      
+
       post {
         always {
           sh '''#!/bin/bash -l
