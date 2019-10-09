@@ -44,39 +44,23 @@ pipeline {
     }
     stage('pyenv') {
 
-      steps {
-        sh '''
-        # python version is taken from .python-version
-        pyenv virtualenv ws
-        pyenv activate ws
-        pip install -r requirements.txt
-        '''
-      }
-    }
-
-    stage('quick-tests') {
-
       parallel {
-        stage('yamllint'){
+        stage('pyenv') {
           steps {
-            sh '''
+            sh '''#!/bin/bash -l
+            # python version is taken from .python-version
+            pyenv virtualenv ws
             pyenv activate ws
-            yamllint .
-            '''
-          }
-        }
-        stage('ansible-lint'){
-          steps {
-            sh '''
-            pyenv activate ws
-            ansible-lint desktop.yaml
+            pyenv install --upgrade pip==19.2.3
+            hash -r
+            pip install -r requirements.txt
             '''
           }
         }
 
         stage('vagrant info'){
           steps {
-            sh '''
+            sh '''#!/bin/bash -l
 
             export | sort
 
@@ -87,13 +71,35 @@ pipeline {
             '''
           }
         }
+      }
+    }
+
+    stage('quick-tests') {
+
+      parallel {
+        stage('yamllint'){
+          steps {
+            sh '''#!/bin/bash -l
+            pyenv activate ws
+            yamllint .
+            '''
+          }
+        }
+        stage('ansible-lint'){
+          steps {
+            sh '''#!/bin/bash -l
+            pyenv activate ws
+            ansible-lint desktop.yaml
+            '''
+          }
+        }
 
       }
     }
 
     stage('test'){
       steps {
-        sh '''
+        sh '''#!/bin/bash -l
         pyenv activate ws
 
         export VM_TEARDOWN=true
@@ -101,18 +107,22 @@ pipeline {
 
         '''
       }
+      
+      post {
+        always {
+          sh '''#!/bin/bash -l
+          vagrant destroy -f
+          '''
+        }
+      }
     }
-
-
-
 
   }
 
 
   post {
     always {
-      sh '''
-      vagrant destroy -f
+      sh '''#!/bin/bash -l
       pyenv virtualenv-delete -f ws
       '''
 
