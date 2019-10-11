@@ -1,9 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-V_CPU = 4 # in cores
-V_MEM = 1024 # in megabytes per core
-V_MEM_TOTAL = V_MEM * V_CPU
+V_CPU = ENV['V_CPU'] || 4 # in cores
+V_MEM = ENV['V_MEM'] || 1024 # in megabytes per core
+V_MEM_TOTAL = V_MEM.to_i * V_CPU.to_i
 SYNC_TYPE = "rsync" # how to sync files in vagrant, for lxc rsync is suggested
 
 
