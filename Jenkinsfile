@@ -11,7 +11,7 @@ pipeline {
   agent { label 'libvirt' }
 
   options {
-    timeout(time: 1, unit: 'HOURS')
+    timeout(time: 2, unit: 'HOURS')
     disableConcurrentBuilds()
     ansiColor('xterm')
     timestamps() // breaks ansiColor plugin
