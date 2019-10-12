@@ -9,6 +9,7 @@ export DEBIAN_FRONTEND=noninteractive
 # notice this may not be the closest/fastest mirror by ping/transfer
 sed -i -e 's|http://us.archive.ubuntu.com/ubuntu/|mirror://mirrors.ubuntu.com/mirrors.txt|g' /etc/apt/sources.list
 
+# packages needed for pyenv
 apt-get update > /dev/null
 apt-get install -y \
 	build-essential \
