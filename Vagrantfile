@@ -40,7 +40,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "u1804" do |s|
     s.vm.box = "generic/ubuntu1804"
-    s.vm.box_version = "1.9.12"
+    s.vm.box_version = "1.9.36"
     s.vm.network "private_network", ip: "192.168.50.10"
   end
 
