@@ -25,8 +25,6 @@ pipeline {
 
   environment {
     PYENV_VIRTUALENV_DISABLE_PROMPT=1
-    V_CPU = 2
-    V_MEM = 512
   }
   
   stages {
