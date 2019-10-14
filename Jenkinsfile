@@ -93,7 +93,7 @@ pipeline {
           steps {
             sh '''#!/bin/bash -l
             pyenv activate ws
-            ansible-lint desktop.yaml
+            ansible-lint desktop.yml
             '''
           }
         }
