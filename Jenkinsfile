@@ -50,7 +50,8 @@ pipeline {
 
     stage('review') {
       when {
-        expression { env.CHANGE_AUTHOR != 'nvtkaszpir' }
+        // run review step if this is PR and the PR is not from repo owner
+        expression { (env.CHANGE_ID != null) && (env.CHANGE_AUTHOR != 'nvtkaszpir') }
       }
 
       steps {
