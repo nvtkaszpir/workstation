@@ -49,6 +49,14 @@ pipeline {
     stage('pyenv') {
 
       parallel {
+        stage('markdownlint') {
+          steps {
+            sh '''#!/bin/bash -l
+            docker run -v $PWD:/markdown:ro 06kellyjac/markdownlint-cli .
+            '''
+          }
+        }
+
         stage('pyenv') {
           steps {
             sh '''#!/bin/bash -l
