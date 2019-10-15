@@ -1,0 +1,10 @@
+language: python
+install:
+  - pip install ansible-lint
+  - ansible-lint --version
+script:
+  - ansible-lint ara_logconfig.yml
+  - ansible-lint desktop.yml
+  - ansible-lint inventory.yml
+  - ansible-lint requirements.yml
+
