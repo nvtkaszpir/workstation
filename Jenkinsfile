@@ -46,6 +46,37 @@ pipeline {
         }
       }
     }
+
+
+    stage('review') {
+      when {
+        expression { env.CHANGE_AUTHOR != 'nvtkaszpir' }
+      }
+
+      steps {
+        script {
+          approve = input(message: "Continue with build?", submitter: 'kaszpir', parameters: [
+            choice(
+              name: 'result',
+              choices: ["No", "Yes"].join("\n"),
+              description: "Please review the code and continue build if it looks good."
+            )
+          ])
+
+          if (approve == "Yes") {
+            println "Review stage approved."
+          }
+          else
+          {
+            currentBuild.result = 'ABORTED'
+            error("Review stage not approved.")
+          }
+        }
+      }
+    }
+
+
+
     stage('pyenv') {
 
       parallel {
