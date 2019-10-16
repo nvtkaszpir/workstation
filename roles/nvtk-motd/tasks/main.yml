@@ -1,0 +1,8 @@
+---
+- name: 'motd - config'
+  template:
+    src: 95-nyan-cat.j2
+    dest: /etc/update-motd.d/95-nyan-cat
+    mode: 0755
+    owner: root
+    group: root
