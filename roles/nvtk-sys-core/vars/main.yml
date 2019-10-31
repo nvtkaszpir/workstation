@@ -1,8 +1,10 @@
 ---
 nvtk_sys_packages_common:
   - acpid
+  - apt-rdepends
   - chrony
   - curl
+  - dconf-tools
   - dos2unix
   - dstat
   - ethtool
@@ -34,10 +36,12 @@ nvtk_sys_packages_common:
   - pbzip2
   - pigz
   - psmisc
+  - pv
   - python-jmespath
   - python-pip
   - python-simplejson
   - python-virtualenv
+  - qrencode
   - rsync
   - screen
   - sipcalc
