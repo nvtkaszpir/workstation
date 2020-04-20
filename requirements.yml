@@ -5,8 +5,8 @@
 ---
 - src: geerlingguy.docker
   version: 2.5.2
-- src: devoperate.gcloud
-  version: v0.1.0
+- src: markosamuli.gcloud
+  version: v2.1.2
 - src: andrewrothstein.kubectl
   version: v1.1.19
 - src: chaosmail.sublime-text
