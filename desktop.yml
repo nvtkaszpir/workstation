@@ -31,6 +31,6 @@
     - nvtk-qbittorrent
     - nvtk-keybase
     - geerlingguy.docker
-    - devoperate.gcloud
+    - markosamuli.gcloud
     - andrewrothstein.kubectl
     - chaosmail.sublime-text
