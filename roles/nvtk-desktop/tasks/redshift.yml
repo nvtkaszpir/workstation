@@ -5,7 +5,9 @@
     repo: 'ppa:dobey/redshift-daily'
     state: 'present'
     update_cache: true
-  when: ansible_os_family == 'Debian'
+  when:
+    - ansible_os_family == 'Debian'
+    - (ansible_distribution_major_version| int) < 20
 
 - name: 'redshift - install'
   package:

@@ -16,6 +16,8 @@
   when:
     - hugin_ppa_repo is defined
     - ansible_os_family == 'Debian'
+    - (ansible_distribution_major_version| int) < 20
+
 
 - name: 'hugin - install'
   package:

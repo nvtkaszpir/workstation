@@ -45,3 +45,9 @@ Notes to self:
   this is vagrant-libvirt limitation
 * jenkinsfile dynamic detection of nproc on jenkins worker,
   you will meet CPS/NonCPS chicken-egg errors
+
+## Tips
+
+* get local facts `ansible  -m setup  -i inventory.yml localhost`
+
+

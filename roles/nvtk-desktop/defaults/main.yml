@@ -1,5 +1,6 @@
 ---
 packages_desktop:
+  - backintime
   - chromium-browser
   - clusterssh
   - conky
@@ -19,6 +20,7 @@ packages_desktop:
   - remmina-plugin-spice
   - shotwell
   - spice-html5
+  - sshfs
   - terminator
   - toilet
   - toilet-fonts
@@ -30,4 +32,5 @@ packages_desktop:
   - x264
   - xbacklight
   - xubuntu-desktop
-  - zenmap
+# requires py 2.7
+#  - zenmap
