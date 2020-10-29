@@ -12,7 +12,7 @@ Click==7.0
 cliff==2.14.1
 cmd2==0.9.12
 colorama==0.4.1
-cryptography==2.6.1
+cryptography==3.2
 debtcollector==1.21.0
 entrypoints==0.3
 extras==1.0.0
