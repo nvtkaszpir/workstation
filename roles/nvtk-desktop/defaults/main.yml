@@ -13,6 +13,7 @@ packages_desktop:
   - network-manager-openvpn
   - network-manager-vpnc
   - openjdk-8-jdk
+  - openjdk-11-jdk
   - pinta
   - redshift
   - redshift-gtk
@@ -33,3 +34,6 @@ packages_desktop:
   - x264
   - xbacklight
   - xubuntu-desktop
+  - zram-config
+  - zram-tools
+
