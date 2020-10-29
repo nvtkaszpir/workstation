@@ -1,6 +1,6 @@
 alembic==1.0.10
 ansible==2.7.16
-ansible-lint==4.1.0
+ansible-lint==2.9.6
 appdirs==1.4.3
 ara==0.16.3
 asn1crypto==0.24.0

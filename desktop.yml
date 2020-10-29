@@ -29,7 +29,6 @@
     - nvtk-doublecmd
     - nvtk-hugin
     - nvtk-qbittorrent
-    - nvtk-keybase
     - geerlingguy.docker
     - markosamuli.gcloud
     - andrewrothstein.kubectl

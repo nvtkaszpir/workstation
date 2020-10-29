@@ -4,7 +4,9 @@
     repo: 'ppa:alexx2000/doublecmd'
     state: 'present'
     update_cache: true
-  when: ansible_os_family == 'Debian'
+  when:
+    - ansible_os_family == 'Debian'
+    - (ansible_distribution_major_version| int) < 20
 
 - name: 'doublecmd - install'
   package:

@@ -1,5 +1,6 @@
 ---
 packages_desktop:
+  - backintime-qt
   - chromium-browser
   - clusterssh
   - conky
@@ -12,6 +13,7 @@ packages_desktop:
   - network-manager-openvpn
   - network-manager-vpnc
   - openjdk-8-jdk
+  - openjdk-11-jdk
   - pinta
   - redshift
   - redshift-gtk
@@ -19,15 +21,19 @@ packages_desktop:
   - remmina-plugin-spice
   - shotwell
   - spice-html5
+  - sshfs
   - terminator
   - toilet
   - toilet-fonts
   - virt-manager
   - vlc
   - vpnc
+  - wireguard
   - wireshark
   - wireshark-gtk
   - x264
   - xbacklight
   - xubuntu-desktop
-  - zenmap
+  - zram-config
+  - zram-tools
+
