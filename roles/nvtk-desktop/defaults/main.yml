@@ -1,6 +1,6 @@
 ---
 packages_desktop:
-  - backintime
+  - backintime-qt
   - chromium-browser
   - clusterssh
   - conky
@@ -27,10 +27,9 @@ packages_desktop:
   - virt-manager
   - vlc
   - vpnc
+  - wireguard
   - wireshark
   - wireshark-gtk
   - x264
   - xbacklight
   - xubuntu-desktop
-# requires py 2.7
-#  - zenmap
