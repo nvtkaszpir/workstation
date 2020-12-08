@@ -4,10 +4,10 @@
 
 ---
 - src: geerlingguy.docker
-  version: 2.5.2
+  version: 2.9.0
 - src: markosamuli.gcloud
   version: v2.1.2
 - src: andrewrothstein.kubectl
-  version: v1.1.19
+  version: v1.1.49
 - src: chaosmail.sublime-text
   version: master
