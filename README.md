@@ -2,6 +2,11 @@
 
 Provisioning for my working station using Ansible.
 
+## Know limitations
+
+* kernel 5.8 + systemd 245 causes issues with checking services states, so ensure not to use kernel hwe-edge on focal.fossa - see [this](https://github.com/ansible/ansible/issues/71528#issuecomment-687620030)
+* some stuff works better as sudo, such as `sudo ansible-playbook -v -i inventory.yml desktop.yml`
+
 ## Requirements
 
 To run locally:
