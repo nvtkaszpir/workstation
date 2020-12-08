@@ -1,5 +1,6 @@
 ---
 packages_desktop:
+  - awscli
   - backintime-qt
   - chromium-browser
   - clusterssh
@@ -12,8 +13,8 @@ packages_desktop:
   - meld
   - network-manager-openvpn
   - network-manager-vpnc
-  - openjdk-8-jdk
   - openjdk-11-jdk
+  - openjdk-8-jdk
   - pinta
   - redshift
   - redshift-gtk
@@ -21,6 +22,7 @@ packages_desktop:
   - remmina-plugin-spice
   - shotwell
   - spice-html5
+  - ssh-askpass
   - sshfs
   - terminator
   - toilet

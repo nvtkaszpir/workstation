@@ -16,6 +16,7 @@ nvtk_sys_packages_common:
   - iperf
   - iptraf
   - jq
+  - libcurl4
   - links
   - lnav
   - lvm2
@@ -44,6 +45,7 @@ nvtk_sys_packages_common:
   - qrencode
   - rsync
   - screen
+  - silversearcher-ag
   - sipcalc
   - smartmontools
   - sqlite3
