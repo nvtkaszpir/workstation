@@ -34,7 +34,7 @@ sudo apt install -y qemu-kvm libvirt vagrant vagrant-libvirt
 
 [![asciicast](https://asciinema.org/a/249326.svg)](https://asciinema.org/a/249326)
 
-After starting ara script you are presented with url to [localhost:9191](http://localhost:9191)
+After starting ara script you are presented with url to [localhost:8000](http://localhost:8000)
 which shows ara web server, example image below.
 
 ![ara web preview](ara.png "ARA web preview example")
