@@ -95,7 +95,7 @@ pipeline {
             # python version is taken from .python-version
             pyenv virtualenv ws
             pyenv activate ws
-            pyenv install --upgrade pip==19.3
+            pyenv install --upgrade pip==20.3.3
             hash -r
             pip install -r requirements.txt
             '''
