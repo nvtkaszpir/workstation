@@ -12,13 +12,20 @@ Provisioning for my working station using Ansible.
 To run locally:
 
 * [vagrant](https://www.vagrantup.com/)
-* linux host with quemu-kvm to spawn virutal machine (virtualbox/windows not tested)
+* linux host with qemu-kvm to spawn virtual machine (virtualbox/windows not tested)
 * working [vagrant-libvirt](https://github.com/vagrant-libvirt/vagrant-libvirt)
+
+Above can be invoked under Ubuntu 20.04 via:
+
+```bash
+sudo apt install -y qemu-kvm libvirt vagrant vagrant-libvirt
+```
+
 * access to internet to download dependencies
 * run `vagrant up`
 * full run should take about 20 minutes (installing desktop on server)
-* run from host `scripts/test_in_vagrant.sh` to fetch also ara reports
-* after run you can exec `scripts/ara.sh` to see ansible runs results via web
+* run from host `scripts/test_in_vagrant.sh` to fetch also `ara` reports
+* after run you can exec `scripts/ara.sh` to see ansible runs results via web if you have ara installed on host
 * re-run `scripts/test_in_vagrant.sh` and hit refresh in ara web
 
 ## Demo
@@ -39,8 +46,23 @@ which shows ara web server, example image below.
 * guest: ansible task retries for package installs
 * guest: dnsmasq
 * guest: smartgit
-* guest: apt dist-upgrade ( this is slow, just update box?)
 * guest: system reboot if required?
+
+* sudo apt  install awscli
+```bash
+curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.9/2020-11-02/bin/linux/amd64/aws-iam-authenticator
+```
+
+* containers/snaps/tools:
+- authy
+- backintime + config
+- dive
+- gimp
+- kaniko
+- kind
+- p7zip-desktop
+- skopeo
+- xnview
 
 ## Do not do
 
