@@ -41,6 +41,7 @@ which shows ara web server, example image below.
 
 ## TODO
 
+* rename roles so that they conform with ansible-linter etc
 * ci: linters output to html
 * guest: in-shell apt settings (retries)
 * guest: ansible task retries for package installs
