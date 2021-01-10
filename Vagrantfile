@@ -16,8 +16,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder ".", "/vagrant",
     type: SYNC_TYPE,
-    # rsync__verbose: true,
-    rsync__exclude: [".vagrant/"]
+    rsync__verbose: true,
+    rsync__exclude: [".vagrant/", "./reports/"]
 
   # providers
   config.vm.provider "virtualbox" do |v|
@@ -38,9 +38,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   end
 
-  config.vm.define "u1804" do |s|
-    s.vm.box = "generic/ubuntu1804"
-    s.vm.box_version = "1.9.36"
+  config.vm.define "u2004" do |s|
+    s.vm.box = "generic/ubuntu2004"
+    s.vm.box_version = "3.1.22"
     s.vm.network "private_network", ip: "192.168.50.10"
   end
 
