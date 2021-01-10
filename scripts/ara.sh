@@ -11,9 +11,6 @@ export ARA_BASE_DIR
 ARA_LOG_CONFIG="$(git rev-parse --show-toplevel)/ara_logconfig.yml"
 export ARA_LOG_CONFIG
 
-ARA_BASE_DIR="$(git rev-parse --show-toplevel)/reports/ara/db"
-export ARA_BASE_DIR
-
 ARA_DATABASE_NAME="$(git rev-parse --show-toplevel)/reports/ara/db/ansible.sqlite"
 export ARA_DATABASE_NAME
 
