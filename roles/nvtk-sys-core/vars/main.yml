@@ -4,7 +4,6 @@ nvtk_sys_packages_common:
   - apt-rdepends
   - chrony
   - curl
-#  - dconf-tools
   - dos2unix
   - dstat
   - ethtool

@@ -3,6 +3,7 @@
 - name: 'Tune sysctl aggresively on vms'
   copy:
     dest: '/etc/sysctl.d/zz-vmdirty.conf'
+    mode: 0644
     content: |
       vm.dirty_background_ratio = 10
       vm.dirty_expire_centisecs = 30000

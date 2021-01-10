@@ -23,12 +23,12 @@
   authorized_key:
     user: 'root'
     # yamllint disable-line
-    key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAEe0HIh54Qrb/1oVa7qeG2zglEXl+vryHgi8Dad95hlYROxfjTnG5FDt9RX3cT6SvFjZ34+/L995Tq3O8v3eh87KgRcfU/tXpBu+dKAX/6xVQDprNmDsUNWH+/RGwBFj/rlkiyciop3JtPs7Pgec/bzmcbtETj1OiHHNw2uKMHznf00hMxbCBQ4hb15TZjCRYalgDO77oXMjrygUqb1k2If+vo4MZ6KapYGnaCwes/qJoxBzWTl8TGtAPQc0hU8hCQT9Eh7vWVx6mP48cgj6VKfHas97sd86dbv8AqCYNqBQ8Ai4721+FqPsxaJHn6E755OEFBgyPcTqpSbacxOnZ kaszpir@bagno'
+    key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAEe0HIh54Qrb/1oVa7qeG2zglEXl+vryHgi8Dad95hlYROxfjTnG5FDt9RX3cT6SvFjZ34+/L995Tq3O8v3eh87KgRcfU/tXpBu+dKAX/6xVQDprNmDsUNWH+/RGwBFj/rlkiyciop3JtPs7Pgec/bzmcbtETj1OiHHNw2uKMHznf00hMxbCBQ4hb15TZjCRYalgDO77oXMjrygUqb1k2If+vo4MZ6KapYGnaCwes/qJoxBzWTl8TGtAPQc0hU8hCQT9Eh7vWVx6mP48cgj6VKfHas97sd86dbv8AqCYNqBQ8Ai4721+FqPsxaJHn6E755OEFBgyPcTqpSbacxOnZ kaszpir@bagno'  # noqa 204
     state: 'present'
 
 - name: 'Add SSH pub key to kaszpir - kaszpir@bagno'
   authorized_key:
     user: 'kaszpir'
     # yamllint disable-line
-    key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAEe0HIh54Qrb/1oVa7qeG2zglEXl+vryHgi8Dad95hlYROxfjTnG5FDt9RX3cT6SvFjZ34+/L995Tq3O8v3eh87KgRcfU/tXpBu+dKAX/6xVQDprNmDsUNWH+/RGwBFj/rlkiyciop3JtPs7Pgec/bzmcbtETj1OiHHNw2uKMHznf00hMxbCBQ4hb15TZjCRYalgDO77oXMjrygUqb1k2If+vo4MZ6KapYGnaCwes/qJoxBzWTl8TGtAPQc0hU8hCQT9Eh7vWVx6mP48cgj6VKfHas97sd86dbv8AqCYNqBQ8Ai4721+FqPsxaJHn6E755OEFBgyPcTqpSbacxOnZ kaszpir@bagno'
+    key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAEe0HIh54Qrb/1oVa7qeG2zglEXl+vryHgi8Dad95hlYROxfjTnG5FDt9RX3cT6SvFjZ34+/L995Tq3O8v3eh87KgRcfU/tXpBu+dKAX/6xVQDprNmDsUNWH+/RGwBFj/rlkiyciop3JtPs7Pgec/bzmcbtETj1OiHHNw2uKMHznf00hMxbCBQ4hb15TZjCRYalgDO77oXMjrygUqb1k2If+vo4MZ6KapYGnaCwes/qJoxBzWTl8TGtAPQc0hU8hCQT9Eh7vWVx6mP48cgj6VKfHas97sd86dbv8AqCYNqBQ8Ai4721+FqPsxaJHn6E755OEFBgyPcTqpSbacxOnZ kaszpir@bagno'  # noqa 204
     state: 'present'

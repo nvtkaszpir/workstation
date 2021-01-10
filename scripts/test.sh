@@ -1,6 +1,8 @@
 #!/bin/bash -e
 PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PYENV_VIRTUALENV_DISABLE_PROMPT
+# fix issues with time reports, especially in ara
+export TZ=Etc/UTC
 
 if [ -d "/vagrant" ]; then
   echo "Running in vagrant, faking some things..."
@@ -38,7 +40,7 @@ pyenv virtualenv --force --python=python3 workstation
 pyenv activate workstation
 
 # install dependencies via pip
-pip install --upgrade pip==19.1.1
+pip install --upgrade pip==20.3.3
 pip install -r requirements.txt
 
 # code quality
@@ -55,9 +57,9 @@ ansible-galaxy install -r requirements.yml
 
 echo "======== Stage: ansible ara config ======"
 # prepare ansible ara for local reports
-source <(python -m ara.setup.env)
-ARA_DIR="$(pwd)/reports/ara/db"
-export ARA_DIR
+export ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)"
+ARA_BASE_DIR="$(pwd)/reports/ara/db"
+export ARA_BASE_DIR
 
 echo "======== Stage: ansible ========"
 # some verbose commands
@@ -75,7 +77,7 @@ echo "======== Stage: ansible ara report ======"
 # prepare ansible ara for local reports
 
 # generate reports
-ara generate html "$(pwd)/reports/ara/html/"
-ara generate html "$(pwd)/reports/ara/junit/"
+ara-manage generate "$(pwd)/reports/ara/html/"
+ara-manage generate "$(pwd)/reports/ara/junit/"
 
 exit $result

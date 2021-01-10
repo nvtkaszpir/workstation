@@ -8,8 +8,10 @@
     - ansible_os_family == 'Debian'
     - (ansible_distribution_major_version| int) < 20
 
+# switch to qt version, gtk sometimes has some weird
+# delays with simple things like renaming file
 - name: 'doublecmd - install'
   package:
-    name: 'doublecmd-gtk'
+    name: 'doublecmd-qt'
     state: 'latest'
   when: ansible_os_family == 'Debian'

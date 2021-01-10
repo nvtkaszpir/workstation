@@ -4,12 +4,28 @@
     name: '{{ packages_desktop }}'
     state: 'latest'
 
+- name: 'Disable gdm'
+  service:
+    name: 'gdm'
+    enabled: false
+    state: 'stopped'
+
+- name: 'Set default display manager to Lightdm'
+  become: true
+  copy:
+    dest: /etc/X11/default-display-manager
+    content: '/usr/sbin/lightdm'
+    mode: 0644
+
+- name: 'Reconfigure display manager'
+  debconf:
+    name: 'lightdm'
+
 - name: 'Enable lightdm'
   service:
     name: 'lightdm'
     enabled: true
     state: 'started'
-
 
 - name: 'Remove specific desktop packages'
   package:

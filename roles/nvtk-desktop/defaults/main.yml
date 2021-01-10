@@ -21,6 +21,7 @@ packages_desktop:
   - remmina
   - remmina-plugin-spice
   - shotwell
+  - snapd
   - spice-html5
   - ssh-askpass
   - sshfs
@@ -38,4 +39,3 @@ packages_desktop:
   - xubuntu-desktop
   - zram-config
   - zram-tools
-
