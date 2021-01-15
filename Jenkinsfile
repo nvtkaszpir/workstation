@@ -109,9 +109,8 @@ pipeline {
             export | sort
 
             vagrant version
-            vagrant plugin list
-
-            vagrant plugin install vagrant-libvirt --plugin-version 0.0.45
+            vagrant plugin list | grep vagrant-libvirt \
+              || vagrant plugin install vagrant-libvirt --plugin-version 0.0.45
             '''
           }
         }
