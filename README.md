@@ -4,8 +4,11 @@ Provisioning for my working station using Ansible.
 
 ## Know limitations
 
-* kernel 5.8 + systemd 245 causes issues with checking services states, so ensure not to use kernel hwe-edge on focal.fossa - see [this](https://github.com/ansible/ansible/issues/71528#issuecomment-687620030)
-* some stuff works better as sudo, such as `sudo ansible-playbook -v -i inventory.yml desktop.yml`
+* kernel 5.8 + systemd 245 causes issues with checking services states,
+  so ensure not to use kernel hwe-edge on focal.fossa - see
+  [this](https://github.com/ansible/ansible/issues/71528#issuecomment-687620030)
+* some stuff works better as sudo, such as
+  `sudo ansible-playbook -v -i inventory.yml desktop.yml`
 
 ## Requirements
 
@@ -25,7 +28,8 @@ sudo apt install -y qemu-kvm libvirt vagrant vagrant-libvirt
 * run `vagrant up`
 * full run should take about 20 minutes (installing desktop on server)
 * run from host `scripts/test_in_vagrant.sh` to fetch also `ara` reports
-* after run you can exec `scripts/ara.sh` to see ansible runs results via web if you have ara installed on host
+* after run you can exec `scripts/ara.sh` to see ansible runs results via
+  web if you have ara installed on host
 * re-run `scripts/test_in_vagrant.sh` and hit refresh in ara web
 
 ## Demo
@@ -41,6 +45,7 @@ which shows ara web server, example image below.
 
 ## TODO
 
+* set timezone to Etc/UTC
 * rename roles so that they conform with ansible-linter etc
 * ci: linters output to html
 * guest: in-shell apt settings (retries)
@@ -50,20 +55,22 @@ which shows ara web server, example image below.
 * guest: system reboot if required?
 
 * sudo apt  install awscli
+
 ```bash
 curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.9/2020-11-02/bin/linux/amd64/aws-iam-authenticator
 ```
 
 * containers/snaps/tools:
-- authy
-- backintime + config
-- dive
-- gimp
-- kaniko
-- kind
-- p7zip-desktop
-- skopeo
-- xnview
+
+  + authy
+  + backintime + config
+  + dive
+  + gimp
+  + kaniko
+  + kind
+  + p7zip-desktop
+  + skopeo
+  + xnview
 
 ## Do not do
 
@@ -77,5 +84,3 @@ Notes to self:
 ## Tips
 
 * get local facts `ansible  -m setup  -i inventory.yml localhost`
-
-
