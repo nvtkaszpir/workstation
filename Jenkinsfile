@@ -170,7 +170,7 @@ pipeline {
       pyenv virtualenv-delete -f ws
       '''
 
-      archiveArtifacts allowEmptyArchive: true,  artifacts: '**/reports/*', excludes: '**/*.gitkeep', fingerprint: true
+      archiveArtifacts allowEmptyArchive: true,  artifacts: 'reports/**/*.*', excludes: '**/*.gitkeep', fingerprint: true
       deleteDir()
     }
   }
