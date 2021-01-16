@@ -46,6 +46,7 @@ which shows ara web server, example image below.
 
 ## TODO
 
+* drop Centos
 * set timezone to Etc/UTC
 * rename roles so that they conform with ansible-linter etc
 * ci: linters output to html

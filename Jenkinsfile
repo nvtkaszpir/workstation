@@ -78,7 +78,7 @@ pipeline {
 
 
 
-    stage('pyenv') {
+    stage('prep') {
 
       parallel {
         stage('markdownlint') {
@@ -98,6 +98,7 @@ pipeline {
             pyenv activate ws
             pip install --upgrade pip==20.3.3
             hash -r
+            pip install lxml # needs to be before requirements :/
             pip install -r requirements.txt
             '''
           }
@@ -125,16 +126,19 @@ pipeline {
           steps {
             sh '''#!/bin/bash -l
             pyenv activate ws
-            yamllint .
+            yamllint -f parsable . | yamllint-junit -o reports/yamllint-junit.xml
             '''
+            junit 'reports/yamllint-junit.xml'
+
           }
         }
         stage('ansible-lint'){
           steps {
             sh '''#!/bin/bash -l
             pyenv activate ws
-            ansible-lint desktop.yml
+            ansible-lint desktop.yml | ansible-lint-junit -o reports/ansible-lint.xml
             '''
+            junit 'reports/ansible-lint.xml'
           }
         }
 
