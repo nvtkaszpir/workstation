@@ -20,15 +20,15 @@
         install_recommends: false
       when: ansible_os_family == 'Debian'
   roles:
-    - nvtk-users
-    - nvtk-rsyslog
-    - nvtk-git
-    - nvtk-sys-core
-    - nvtk-desktop
-    - nvtk-syncthing
-    - nvtk-doublecmd
-    - nvtk-hugin
-    - nvtk-qbittorrent
+    - nvtk_users
+    - nvtk_rsyslog
+    - nvtk_git
+    - nvtk_sys_core
+    - nvtk_desktop
+    - nvtk_syncthing
+    - nvtk_doublecmd
+    - nvtk_hugin
+    - nvtk_qbittorrent
     - geerlingguy.docker
     - markosamuli.gcloud
     - andrewrothstein.kubectl
