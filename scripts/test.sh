@@ -41,12 +41,14 @@ pyenv activate workstation
 
 # install dependencies via pip
 pip install --upgrade pip==20.3.3
+pip install lxml # needs to be before requirements
 pip install -r requirements.txt
 
 # code quality
 
 echo "======== Stage: linters - ansible-lint ========"
 ansible-lint desktop.yml
+
 echo "======== Stage: linters - yamllint ========"
 yamllint -f parsable .
 

@@ -29,7 +29,7 @@ fi
 # fetch back the results
 vagrant ssh-config >.vagrant/ssh-config
 sync
-rsync -va --rsync-path="sudo rsync" -e "ssh -F .vagrant/ssh-config" vagrant@${VM_HOSTNAME}:/vagrant/reports/ ./reports/
+rsync -a --rsync-path="sudo rsync" -e "ssh -F .vagrant/ssh-config" vagrant@${VM_HOSTNAME}:/vagrant/reports/ ./reports/
 
 if [ "$VM_TEARDOWN" == "true" ]; then
   vagrant destroy -f

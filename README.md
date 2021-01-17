@@ -9,6 +9,7 @@ Provisioning for my working station using Ansible.
   [this](https://github.com/ansible/ansible/issues/71528#issuecomment-687620030)
 * some stuff works better as sudo, such as
   `sudo ansible-playbook -v -i inventory.yml desktop.yml`
+* to see htlm reports without errors in jenkins then see [this](https://stackoverflow.com/a/46197356/3163492)
 
 ## Requirements
 
@@ -45,6 +46,7 @@ which shows ara web server, example image below.
 
 ## TODO
 
+* drop Centos
 * set timezone to Etc/UTC
 * rename roles so that they conform with ansible-linter etc
 * ci: linters output to html

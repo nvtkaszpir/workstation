@@ -7,9 +7,9 @@ parseable: true
 quiet: false
 # rulesdir:
 #   - ./rule/directory/
+skip_list:
+  - '403'  # Package installs should not use latest
 warn_list:
-  - '403'  # package latest
-  - '204'  # line too long
   - '106'  # Role name {} does not match ``^[a-z][a-z0-9_]+$`` pattern
 use_default_rules: true
 verbosity: 0

@@ -1,6 +1,7 @@
 ansible==2.10.4
 ansible-base==2.10.4
 ansible-lint==4.3.7
+ansible-lint-junit==0.15
 ara==1.5.4
 attrs==20.3.0
 certifi==2020.12.5
@@ -21,6 +22,7 @@ idna==2.10
 importlib-metadata==3.3.0
 Jinja2==2.11.2
 junit-xml==1.9
+lxml==4.6.2
 MarkupSafe==1.1.1
 packaging==20.8
 pathspec==0.8.1
@@ -45,4 +47,5 @@ urllib3==1.26.2
 wcwidth==0.2.5
 whitenoise==5.2.0
 yamllint==1.25.0
+yamllint-junit==0.8
 zipp==3.4.0
