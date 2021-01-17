@@ -4,6 +4,7 @@
   with_first_found:
     - "{{ ansible_distribution }}.yml"
     - "{{ ansible_os_family }}.yml"
+    - "main.yml"
 
 - name: 'Add user kaszpir'
   user:

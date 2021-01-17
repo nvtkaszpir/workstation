@@ -1,5 +1,5 @@
 ---
-# yes, it is Ubuntu 17.10 even if we are on xenial
+# yes, it is in Ubuntu 18.10 even if we are on 20.04
 
 - name: 'syncthing-gtk - add repo for dekstop app'
   apt_key:
