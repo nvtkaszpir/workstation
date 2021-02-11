@@ -34,8 +34,10 @@ packages_desktop:
   - wireguard
   - wireshark
   - wireshark-gtk
+  - wmctrl
   - x264
   - xbacklight
+  - xdotool
   - xubuntu-desktop
   - zram-config
   - zram-tools
