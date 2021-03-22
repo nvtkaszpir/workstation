@@ -96,7 +96,7 @@ pipeline {
             pyenv install -s
             pyenv virtualenv ws
             pyenv activate ws
-            pip install --upgrade pip==20.3.3
+            pip install --upgrade pip==21.0.1
             hash -r
             pip install lxml # needs to be before requirements :/
             pip install -r requirements.txt
@@ -112,7 +112,7 @@ pipeline {
 
             vagrant version
             vagrant plugin list | grep vagrant-libvirt \
-              || vagrant plugin install vagrant-libvirt --plugin-version 0.0.45
+              || vagrant plugin install vagrant-libvirt --plugin-version 0.3.0
             '''
           }
         }
