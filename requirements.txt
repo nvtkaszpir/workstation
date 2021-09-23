@@ -1,4 +1,4 @@
-ansible==2.10.4
+ansible==4.2.0
 ansible-base==2.10.4
 ansible-lint==4.3.7
 ansible-lint-junit==0.15
