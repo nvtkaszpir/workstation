@@ -22,7 +22,7 @@ idna==2.10
 importlib-metadata==3.3.0
 Jinja2==2.11.3
 junit-xml==1.9
-lxml==4.6.3
+lxml==4.6.5
 MarkupSafe==1.1.1
 packaging==20.8
 pathspec==0.8.1
