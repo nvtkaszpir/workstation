@@ -4,7 +4,7 @@ ansible-lint==4.3.7
 ansible-lint-junit==0.15
 ara==1.5.4
 attrs==20.3.0
-certifi==2020.12.5
+certifi==2022.12.7
 cffi==1.14.4
 chardet==4.0.0
 cliff==3.5.0
